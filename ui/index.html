@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+		<title>LoadTest</title>
+		<style>
+			.layout {
+				display: grid;
+
+				grid-template-areas:
+					"tp tp tp"
+					"sp ot ot"
+					"sp ot ot";
+				grid-template-columns: 10fr 15fr 15fr;
+				grid-template-rows: auto 1fr 1fr;
+				height: 100vh;
+				overflow: scroll;
+			}
+			#tp {
+				grid-area: tp;
+				background-color: lightgray;
+			}
+			#sp {
+				grid-area: sp;
+				padding-top: 10px;
+			}
+			#ot {
+				grid-area: ot;
+				overflow: scroll;
+			}
+			#ot-textarea {
+				white-space: pre;
+				font-family: monospace;
+				color: darkslategray;
+			}
+
+			#ot-textarea, span {
+				font-size: 12px;
+			}
+
+			span {
+				padding: 0;
+				margin: 0;
+			}
+
+			.prop {
+				color: cornflowerblue;
+			}
+
+			.val {
+				color: sandybrown
+			}
+		</style>
+	</head>
+	<body>
+		<div class="layout">
+			<div id="tp" class="container-fluid">TOP PANEL</div>
+			<div id="sp" class="side-panel container-fluid">
+				<h4>Side Panel</h4>
+				<hr />
+				<details>
+					<summary>Load Tests</summary>
+					<p><small>Load Test 7/27/2024 10am</small></p>
+					<p><small>Load Test 7/27/2024 11am</small></p>
+					<p><small>Load Test 7/27/2024 12pm</small></p>
+					<p><small>Load Test 7/27/2024 1pm</small></p>
+				</details>
+				<hr />
+				<details>
+					<summary>Queries</summary>
+					<a>Top Response Times</a>
+					<hr />
+				</details>
+			</div>
+			<div id="ot" class="container">
+				<div id="ot-textarea"></div>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>
